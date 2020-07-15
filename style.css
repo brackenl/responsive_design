@@ -1,0 +1,946 @@
+/* Overall */
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: ARS Maquette, Helvetica Neue, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .wrapper {
+    max-width: 100%;
+  }
+}
+
+/* Nav */
+
+.top-nav ul {
+  width: 100%;
+  background-color: rgb(19, 19, 19);
+  margin: 0;
+  padding: 5px 0;
+}
+
+.top-nav ul li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  color: rgb(149, 149, 149);
+  margin-left: 12px;
+}
+
+.top-nav ul li i {
+  position: relative;
+  left: 3px;
+  bottom: 3px;
+}
+
+.top-nav ul li.right {
+  float: right;
+  margin: 0 12px 0 0;
+}
+
+.main-nav {
+  width: 100%;
+  height: 48px;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  /* position: fixed;
+  z-index: 999; */
+}
+
+.main-nav .logo-container {
+  background-color: #f42;
+  background: linear-gradient(to bottom right, #c09, #f42 85%);
+  display: none;
+}
+
+.main-nav .logo-container img {
+  width: 80%;
+}
+
+.main-nav ul {
+  background-color: white;
+  margin: 0;
+  padding: 18px 0 0 0;
+  border-right: 1px solid rgb(238, 238, 238);
+}
+
+.main-nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  color: rgb(192, 192, 192);
+  margin: 0 12px;
+  text-transform: uppercase;
+}
+
+.main-nav .search-container,
+.main-nav .burger-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid rgb(238, 238, 238);
+}
+
+.main-nav .fa-search {
+  color: rgb(192, 192, 192);
+  transform: scaleX(-1);
+}
+
+.main-nav .burger-container {
+  display: none;
+}
+
+.main-nav .fa-bars {
+  transform: scaleX(-1);
+  color: #ff4422;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .top-nav {
+    display: none;
+  }
+
+  .main-nav {
+    grid-template-columns: 106px 1fr 50px 50px;
+    height: 48px;
+  }
+
+  .main-nav .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-nav ul {
+    display: none;
+  }
+
+  .main-nav .search-container {
+    grid-column: 3 / span 1;
+  }
+
+  .main-nav .burger-container {
+    display: flex;
+  }
+
+  .main-nav .fa {
+    transform: scale(1.5);
+  }
+}
+
+/* Cover story */
+
+.cover-story {
+  height: 550px;
+  padding: 10px;
+  background-image: linear-gradient(rgb(238, 238, 238), rgb(255, 255, 255) 2%);
+  /* margin-top: 50px; */
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 270px 270px;
+  grid-gap: 10px;
+  grid-auto-flow: dense;
+}
+
+.main-cover-story {
+  grid-row: span 2;
+  background-image: url("images/Untitled-design-2020-07-13T164832.397-796x417.png");
+  background-size: cover;
+  background-color: rgba(221, 33, 33, 0.5);
+  background-blend-mode: multiply;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.main-cover-story img {
+  max-height: 30%;
+  max-width: 45%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.main-cover-story time {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
+
+.main-cover-story .text-container {
+  color: white;
+  margin: 10px;
+}
+
+.main-cover-story .text-container h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-family: Avalon, sans-serif;
+  margin-bottom: 10px;
+}
+
+.main-cover-story .text-container h4 {
+  font-size: 0.9rem;
+  color: rgb(153, 154, 153);
+  margin-top: 10px;
+}
+
+.secondary-cover {
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
+}
+
+.secondary-cover .text-container {
+  margin: 10px;
+}
+
+.secondary-cover .text-container h3 {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+.secondary-cover .text-container h1 {
+  margin: 5px 0;
+}
+
+.secondary-cover .text-container h4 {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: rgb(221, 220, 220);
+}
+
+.cover-story-2 {
+  background-image: url("images/teslaelo-796x448.jpg");
+  background-size: cover;
+}
+
+.cover-story-3 {
+  background-image: url("images/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-...-17.png");
+  background-size: cover;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .main-cover-story img {
+    display: none;
+  }
+
+  .main-cover-story time {
+    display: none;
+  }
+
+  .main-cover-story .text-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-cover-story .text-container h4 {
+    font-size: 1rem;
+  }
+
+  .secondary-cover .text-container h3 {
+    font-size: 1rem;
+  }
+
+  .secondary-cover .text-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .secondary-cover .text-container h4 {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .cover-story {
+    height: calc(100vh - (48px + 20px));
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .main-cover-story {
+    grid-row: span 1;
+  }
+
+  .main-cover-story img {
+    display: none;
+  }
+
+  .main-cover-story time {
+    display: none;
+  }
+
+  .main-cover-story .text-container h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  .main-cover-story .text-container h4 {
+    font-size: 0.7rem;
+  }
+
+  .secondary-cover .text-container h3 {
+    font-size: 1rem;
+  }
+
+  .secondary-cover .text-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .secondary-cover .text-container h4 {
+    font-size: 0.7rem;
+  }
+}
+
+/* Latest / default 4x2 grid */
+
+.latest {
+  margin-top: 80px;
+}
+
+.latest h1 {
+  margin-left: 12px;
+  font-size: 28px;
+  color: #ff4422;
+}
+
+.default-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 250px);
+}
+
+.default-grid-child {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 135px 60px 20px;
+  grid-gap: 5px;
+}
+
+.default-grid-child img {
+  width: 100%;
+}
+
+.default-grid-child h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.default-grid-child h4 {
+  font-size: 13px;
+  color: #aaaaaa;
+  padding: 0;
+  margin: 0;
+}
+
+.latest-1 .img-container {
+  background-image: url("images/SuperStrata_Studio_White_SideView_2370.png");
+  background-size: cover;
+}
+
+.latest-2 .img-container {
+  background-image: url("images/header-image-super-mario-bros-apple-stock-nes-worth-more-516x270.png");
+  background-size: cover;
+}
+
+.latest-3 .img-container {
+  background-image: url("images/Untitled-design-2020-07-10T164414.336-516x270.png");
+  background-size: cover;
+}
+
+.latest-4 .img-container {
+  background-image: url("images/header-image-iphone-screen-to-body-ratio-368x276.png");
+  background-size: cover;
+}
+
+.latest-5 .img-container {
+  background-image: url("images/ubisoft-480x270.jpg");
+  background-size: cover;
+}
+
+.latest-6 .img-container {
+  background-image: url("images/fisker-merger-stocks-public-nyse-listed-spartan-480x270.jpg");
+  background-size: cover;
+}
+
+.latest-7 .img-container {
+  background-image: url("images/Scopio-540x270.jpg");
+  background-size: cover;
+}
+
+.latest-8 .img-container {
+  background-image: url("images/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-...-16-516x270.png");
+  background-size: cover;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .default-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .latest {
+    margin-top: 20px;
+  }
+
+  .default-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, auto);
+  }
+
+  .default-grid-child {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(2, 44px);
+    grid-gap: 5px;
+  }
+
+  .default-grid-child .img-container {
+    grid-row: span 2;
+    background-position: center;
+  }
+
+  .default-grid-child h2 {
+    font-size: 1.1rem;
+    margin-left: 10px;
+  }
+
+  .default-grid-child h4 {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}
+
+/* Funding rounds */
+
+.funding-rounds {
+  margin-top: 80px;
+}
+
+.funding-rounds h1 {
+  margin-left: 12px;
+  font-size: 28px;
+  color: #ff4422;
+}
+
+.funding-rounds-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  padding: 10px;
+}
+
+.funding-rounds-child {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 57px 82px 69px;
+  background-color: rgb(255, 250, 248);
+}
+
+.funding-rounds-child .investee-logo-container {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+
+  border: 2px solid white;
+  height: 60px;
+  width: 60px;
+}
+
+.funding-rounds-child .investee-name h4,
+.funding-rounds-child .investment-amount h4,
+.funding-rounds-child .investment-amount h5 {
+  position: relative;
+  left: 90px;
+  width: calc(100% - 90px);
+}
+
+.funding-rounds-child .investee-name h4 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.funding-rounds-child .investment-amount h4 {
+  font-size: 1.2rem;
+  padding: 5px 0 0 0;
+  margin: 0;
+}
+
+.funding-rounds-child .investment-amount h5 {
+  padding: 0;
+  margin: 0;
+  color: rgb(194, 179, 175);
+  text-transform: uppercase;
+}
+
+.funding-rounds-child .investee-name {
+  background-color: #ff4422;
+  color: white;
+}
+
+.funding-rounds-child .investment-amount {
+  background-color: rgb(255, 235, 231);
+}
+
+.funding-rounds-child .investment-tags {
+  border-bottom: 1px solid rgb(255, 205, 195);
+}
+
+.funding-rounds-child .investment-tags div {
+  margin: 15px 0 0 15px;
+}
+
+.funding-rounds-child .investment-tags i {
+  transform: scale(1.5);
+  color: rgb(25, 25, 25);
+}
+
+.funding-rounds-child .investment-tags div span {
+  margin-left: 20px;
+}
+
+.funding-rounds-child .investment-desc {
+  margin: 15px 15px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.funding-rounds-child .investment-desc span {
+  color: #555;
+}
+
+.fr-1 .investee-logo-container {
+  background-image: url("images/image.jpg");
+  background-size: cover;
+}
+
+.fr-2 .investee-logo-container {
+  background-image: url("images/mariadb.png");
+  background-size: cover;
+}
+
+.fr-3 .investee-logo-container {
+  background-image: url("images/harbourbio.jpeg");
+  background-size: cover;
+}
+
+.fr-4 .investee-logo-container {
+  background-image: url("images/harbourbio.jpeg");
+  background-size: cover;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .funding-rounds-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .funding-rounds-child {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 48px 57px 82px 69px;
+    background-color: rgb(255, 250, 248);
+  }
+
+  .fr-4 {
+    display: none;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .funding-rounds {
+    margin-top: 10px;
+  }
+
+  .funding-rounds-container {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
+}
+
+/* More Stories */
+
+.more-stories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 80px;
+  grid-gap: 5px 35px;
+  padding: 10px;
+}
+
+.more-stories-child h1 {
+  font-size: 28px;
+  color: #ff4422;
+}
+
+.more-stories-child .most-popular {
+  position: relative;
+  height: 276px;
+  margin-bottom: 3px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+}
+
+.more-stories-child .most-popular h5 {
+  text-transform: uppercase;
+  margin: 0 0 5px 10px;
+  font-size: 1rem;
+}
+
+.more-stories-child .most-popular h3 {
+  margin: 0 0 5px 10px;
+  font-size: 1.5rem;
+  width: 80%;
+}
+
+.more-stories-child .most-popular p {
+  margin: 0 0 5px 10px;
+  color: rgb(148, 148, 148);
+}
+
+.more-stories-child .latest {
+  background-color: rgb(255, 244, 243);
+  display: flex;
+  margin: 0;
+  height: 96px;
+  margin-bottom: 3px;
+}
+
+.more-stories-child .latest .text-container {
+  flex: 1;
+}
+
+.more-stories-child .latest .text-container > * {
+  margin: 0 0 0 10px;
+  color: #f42;
+}
+
+.more-stories-child .latest .text-container h5 {
+  font-size: 13px;
+  font-family: Shentox, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin: 5px 0 5px 0;
+}
+
+.more-stories-child .latest .text-container h4 {
+  font-size: 14px;
+  color: #f42;
+  font-weight: 700;
+  line-height: 1.25;
+  width: 85%;
+  margin-top: 0;
+  margin: 5px 0 2px 0;
+}
+
+.more-stories-child .latest .img-container {
+  height: 96px;
+  width: 96px;
+  background-image: url("images/teslaelo-796x448.jpg");
+  background-size: cover;
+  background-position-x: 60%;
+}
+
+.story-list ul {
+  list-style: none; /* Remove default bullets */
+  padding-left: 20px;
+}
+
+.story-list ul li {
+  border-bottom: 1px solid rgb(238, 238, 238);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.story-list ul li::before {
+  content: "\2022";
+  color: #f42;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.ms-1 .most-popular {
+  background-image: url("images/bitcoin_today-header_bitcoin_today-368x276.jpg");
+  background-size: cover;
+}
+
+.ms-2 .most-popular {
+  background-image: url("images/facebook-368x276.png");
+  background-size: cover;
+}
+
+.ms-3 .most-popular {
+  background-image: url("images/header-image-iphone-screen-to-body-ratio-368x276.png");
+  background-size: cover;
+}
+
+.ms-4 .most-popular {
+  background-image: url("images/header-image-super-mario-bros-apple-stock-nes-worth-more-516x270.png");
+  background-size: cover;
+}
+
+.ms-5 .most-popular {
+  background-image: url("images/Fallout-76-hed-368x276.jpg");
+  background-size: cover;
+}
+
+.ms-6 .most-popular {
+  background-image: url("images/Featured-Image-The-Next-Web-368x276.jpg");
+  background-size: cover;
+}
+
+.ms-7 .most-popular {
+  background-image: url("images/tesla-model-y-price-cut-cheaper-affordable-long-range-single-motor-car-368x276.jpg");
+  background-size: cover;
+}
+
+.ms-8 .most-popular {
+  background-image: url("images/BMW-ix3-unveiling-car-future-bavarian-motor-ev-electric-368x276.png");
+  background-size: cover;
+}
+
+.ms-9 .most-popular {
+  background-image: url("images/call-of-duty-warzone-modern-warfare-loadout-reddit-368x276.jpg");
+  background-size: cover;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .more-stories {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .more-stories {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin-top: 10px;
+  }
+
+  .more-stories-child h1 {
+    margin: 5px;
+  }
+}
+
+/* Latest deals */
+
+.deals {
+  margin-top: 80px;
+}
+
+.deals h1 {
+  font-size: 28px;
+  color: #ff4422;
+  margin-left: 12px;
+}
+
+.deals-container {
+  grid-template-rows: repeat(2, 280px);
+}
+
+.deals-child {
+  grid-template-rows: 210px 20px 20px;
+}
+
+.deals-child h4 {
+  font-size: 1.2rem;
+  color: rgb(103, 103, 103);
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  font-size: 0.9rem;
+  color: rgb(191, 191, 191);
+}
+
+.deals-1 .img-container {
+  background-image: url("images/sale_28210_primary_image.jpg");
+  background-size: cover;
+}
+
+.deals-2 .img-container {
+  background-image: url("images/sale_31148_primary_image.jpg");
+  background-size: cover;
+}
+
+.deals-3 .img-container {
+  background-image: url("images/sale_29369_primary_image.jpg");
+  background-size: cover;
+}
+
+.deals-4 .img-container {
+  background-image: url("images/sale_31217_primary_image.jpg");
+  background-size: cover;
+}
+
+.deals-5 .img-container {
+  background-image: url("images/sale_29761_primary_image.jpg");
+  background-size: cover;
+}
+
+.deals-6 .img-container {
+  background-image: url("images/sale_21184_primary_image.jpg");
+  background-size: cover;
+}
+
+.deals-7 .img-container {
+  background-image: url("images/sale_29687_primary_image.jpg");
+  background-size: cover;
+}
+
+.deals-8 .img-container {
+  background-image: url("images/sale_28070_primary_image.jpg");
+  background-size: cover;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .deals {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .deals {
+    margin-top: 10px;
+  }
+
+  .deals h1 {
+    margin: 5px 0 5px 12px;
+  }
+
+  .deals-container {
+    grid-template-rows: none;
+  }
+
+  .deals-child {
+    grid-template-rows: none;
+  }
+}
+
+/* Footer */
+
+footer {
+  height: 25vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+footer .footer-1 {
+  background-color: rgb(19, 19, 19);
+  padding: 30px 0 20px 0;
+}
+
+footer .social-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+footer .social-container div {
+  height: 40px;
+  width: 40px;
+  background-color: rgb(51, 51, 51);
+  border-radius: 50%;
+  margin: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .social-container i {
+  color: white;
+  transform: scale(1.2);
+}
+
+footer .links-container ul {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+
+footer .links-container ul li a {
+  font-family: Shentox, sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  margin: 0 10px;
+}
+
+footer .legal {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+footer .legal div {
+  margin: 0 4px;
+  position: relative;
+}
+
+footer .legal span {
+  color: red;
+}
+
+footer .legal img {
+  position: relative;
+  top: 5px;
+}
+
+footer .legal img,
+footer .legal p {
+  color: white;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+@media only screen and (max-device-width: 480px) {
+  footer {
+    height: 50vh;
+    background-color: rgb(0, 0, 0);
+    margin-top: 30px;
+    overflow: hidden;
+  }
+
+  footer .links-container ul li a {
+    font-size: 12px;
+    margin: 0 7px;
+  }
+
+  footer .social-container {
+    width: 85%;
+    flex-wrap: wrap;
+  }
+
+  footer .legal {
+    flex-direction: column;
+    align-items: center;
+  }
+}
